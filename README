@@ -1,0 +1,32 @@
+                        README - Game Tree
+
+        Radu Octavian - 313CC
+
+        Cerinta 1 - Construirea unui arbore de joc
+
+        Am construit o structura arborescenta in care in fiecare nod retin tabla de x si 0, numarul de pozitii libere ( numarul de fii ) si un vector de fii
+        (posibilele mutari de x si 0) . Retin tabla de x si o sub forma de o matrice int m[3][3] in care X e 1, O e 0 si - este -10. Am reprezentat tabla de
+        x si 0 cu int uri deoarece a simplificat crearea celorlalte functii necesare pentru rezolavarea cerintei.
+        In functia init construiesc radacina arborelui de joc si ii creez fii, care vor avea aceeasi tabla de joc ca si tatal pana cand se efectueaza viitoarea mutare.
+        Dupa aceea in functia child construiesc recursiv tot arborele de joc, in child ma folosesc de adaug unde aloc memorie pentru fii si le setez tabla de joc a tatalui.
+        Mutarea ce face diferenta dintre tata si fiu o realizez in functia child.
+        Cu ajutorul functiei conditie, functie ce evalueaza daca un jucator a castigat, si cu ajutorul numarului de locuri libere de pe tabla stiu cand sa ma opresc din a construi
+        noi fii.
+        Functia afisare printeaza cum este cerut arborele de joc.
+        Dupa aceea eliberez memoria cu functia eliberare1.
+
+        Cerinta 2 - Evaluarea arborelui SI/SAU
+
+        Pentru cerinta 2 am construit arborele in aceeasi maniera ca a cerintei 1 si am retinut in campul in TF valoarea de True sau False a fiecarui nod cu ajutorul functiei
+        TsauF. In TsauF parcurg in adancime arborele pana cand ajung la frunze, noduri terminale, a caror valoare de T sau F este data daca castiga sau nu jucatorul din input, dupa aceea
+        ma intorc recursiv in sus iar valoarea de adevar a fiecarui nod este data de urmatoarea regula: la nivel par realizez sau intre valoriile de adevar ale fiilor nodului, iar la nivel
+        impar realizez si intre valorile de adevar ale fiilor. Nivelul 0, nivel par, este reprezentat de radacina, adica tabla in starea initiala fara ca sa fi mutat jucatorul din input.
+        Dupa ce realizez afisarea cu afisare2 pot sa folosesc eliberare1 pentru a elibera memoria, deoarece este aceeasi structura arborescenta ca la prima cerinta, doar afisarea 		 		difera.                  
+        Cerinta 3 - Algoritmul Minimaxi
+
+        Pentru aceasta cerinta in citire3 citesc si construiesc arborele Minimax folosindu-ma de o coada, introduc in coada radacina dupa care citesc cati fii va avea radacina, aloc memorie pentru 
+        fii si introduc fii in coada, la urmatoarea iteratie citesc atatea elemente cati fii vor avea fii fiilor  si ii introduc si pe acestia in coada si repet proccesul. Dupa ce construiesc
+        arborele in mod corect in memorie folosesc functia Fill pentru a pune in fiecare nod valoarea corespiunzatoare, valoarea nodului este egala cu maximul dintre valorile fiilor daca nodul este
+        la un nivel par iar minimul daca nodul este la un nivel impar.
+        Cu functia afisare3 am afisat in output raspunsul iar cu functia eliberare3 asemanator cu eliberare1 am eliberat memoria arborelui.
+
